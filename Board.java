@@ -6,7 +6,7 @@ public class Board
     private JFrame frame;
     private JPanel grid;
     private Square[][] squares= new Square[5][5];
-
+ //test
 
     public Board()
     {
