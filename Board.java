@@ -26,11 +26,11 @@ public class Board
 
                 if((i+j)%2!=0)
                 {
-                    squares[i][j]= new Square(i,j,g,"water");
+                    squares[i][j]= new Square(i,j,"water");
                 }
                 else
                 {
-                    squares[i][j]= new Square(i,j,g,"lily"); 
+                    squares[i][j]= new Square(i,j,"lily"); 
                 
                     if(i==1 && (j==1 || j== 3) )
                     squares[i][j].setSquaretoFrog();
