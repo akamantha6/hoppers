@@ -10,12 +10,13 @@ public class Board
 
     public Board()
     {
-        frame = new JFrame();
+        JFrame frame = new JFrame();
         frame.setTitle("Hoppers");
         frame.setSize(700,700);
 
-        Container frame2= frame.getContentPane();
-        frame2.setLayout(new GridLayout(5,5));
+        JPanel grid= new JPanel();
+        frame.add(grid);
+        grid.setLayout(new GridLayout(5,5));
 
         for (int i=0; i<5; i++)
         {
@@ -45,7 +46,7 @@ public class Board
 
                 }
                 
-                frame2.add(squares[i][j].bt);
+                grid.add(squares[i][j].bt);
             }
             
           frame.setVisible(true);
