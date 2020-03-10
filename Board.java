@@ -1,7 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
-public class Board
+public class Board implements ActionListener
 {
     private JFrame frame;
     private JPanel grid;
@@ -22,8 +23,8 @@ public class Board
         {
             for(int j=0; j<5; j++)
             {
-                JButton g=new JButton();
 
+                
                 if((i+j)%2!=0)
                 {
                     squares[i][j]= new Square(i,j,"water");
@@ -45,7 +46,7 @@ public class Board
                     squares[i][j].setSquaretoFrogR();
 
                 }
-                
+                squares[i][j].bt.addActionListener(this);
                 grid.add(squares[i][j].bt);
             }
             
@@ -53,4 +54,24 @@ public class Board
         }
                
     }
+
+    public void actionPerformed(ActionEvent e)
+    {
+        
+        
+        
+        
+        
+        
+        if(e.getSource()== squares[0][0].getButton())
+        {
+          System.out.println("hi");
+        }
+    
+    
+    
+    
+    
+    
+    } 
 }
