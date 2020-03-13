@@ -97,4 +97,9 @@ public class Square
     {
         bt.setIcon(frogRY);
     }
+    
+    public void rule()
+    {
+        
+    } 
 }
