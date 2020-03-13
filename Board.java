@@ -7,17 +7,15 @@ public class Board implements ActionListener
     private JFrame frame;
     private JPanel grid;
     private Square[][] squares= new Square[5][5];
-    //git status 
-    //git add
-    //git commit -m""
-    //git push
+    private int buttonsClicked = 0;
+    private Square selectedSquare;
 
 
     public Board()
     {
         JFrame frame = new JFrame();
         frame.setTitle("Hoppers");
-        frame.setSize(700,700);
+        frame.setSize(750,750);
         
 
         JPanel grid= new JPanel(); 
@@ -67,26 +65,52 @@ public class Board implements ActionListener
                
     }
 
-     public void actionPerformed(ActionEvent e)
+    public void actionPerformed(ActionEvent e)
     {
-        
-        
-     for (int i=0; i<5; i++)  
-     {
-        
-        for(int j=0; j<5; j++)
-        {
-        
-             if(e.getSource()== squares[i][j].getButton())
-             {
-               System.out.println("hi");
-             }
-             
-             if(i==4 && j==2)
-                squares[i][j].setSquaretoFrogR();
+        buttonsClicked += 1;
 
+        if(buttonsClicked==0){
+
+        if(e.getSource().equals(squares[1][1].getButton()))
+        {
+            squares[1][1].setSquaretoFrogY();
         }
-    
+
+        if(e.getSource()== squares[1][3].getButton())
+        {
+            squares[1][3].setSquaretoFrogY();
         }
-    } 
+
+        if(e.getSource()== squares[2][2].getButton())
+        {
+            squares[2][2].setSquaretoFrogY();
+        }
+
+        if(e.getSource()== squares[4][0].getButton())
+        {
+            squares[4][0].setSquaretoFrogY();
+        }
+
+        if(e.getSource()== squares[4][2].getButton())
+        {
+            squares[4][2].setSquaretoFrogRY();
+        }
+
+        if(e.getSource()== squares[4][4].getButton())
+        {
+            squares[4][4].setSquaretoFrogY();
+        }
+    }
+ 
+    if(buttonsClicked == 1)
+    {
+        if(e.getSource()== squares[3][3].getButton())
+        {
+            squares[3][3].setSquaretoFrogY();
+
+            selectedSquare = squares[3][3];
+        }
+    }
+        
+  }
 }
