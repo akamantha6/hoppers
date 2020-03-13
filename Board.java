@@ -7,15 +7,20 @@ public class Board implements ActionListener
     private JFrame frame;
     private JPanel grid;
     private Square[][] squares= new Square[5][5];
- //test
+    //git status 
+    //git add
+    //git commit -m""
+    //git push
+
 
     public Board()
     {
         JFrame frame = new JFrame();
         frame.setTitle("Hoppers");
         frame.setSize(700,700);
+        
 
-        JPanel grid= new JPanel();
+        JPanel grid= new JPanel(); 
         frame.add(grid);
         grid.setLayout(new GridLayout(5,5));
 
@@ -23,8 +28,11 @@ public class Board implements ActionListener
         {
             for(int j=0; j<5; j++)
             {
-
+               
+               
                 
+                
+
                 if((i+j)%2!=0)
                 {
                     squares[i][j]= new Square(i,j,"water");
@@ -46,8 +54,12 @@ public class Board implements ActionListener
                     squares[i][j].setSquaretoFrogR();
 
                 }
+                
                 squares[i][j].bt.addActionListener(this);
                 grid.add(squares[i][j].bt);
+               
+
+                
             }
             
           frame.setVisible(true);
@@ -55,23 +67,26 @@ public class Board implements ActionListener
                
     }
 
-    public void actionPerformed(ActionEvent e)
+     public void actionPerformed(ActionEvent e)
     {
         
         
+     for (int i=0; i<5; i++)  
+     {
         
-        
-        
-        
-        if(e.getSource()== squares[0][0].getButton())
+        for(int j=0; j<5; j++)
         {
-          System.out.println("hi");
+        
+             if(e.getSource()== squares[i][j].getButton())
+             {
+               System.out.println("hi");
+             }
+             
+             if(i==4 && j==2)
+                squares[i][j].setSquaretoFrogR();
+
         }
     
-    
-    
-    
-    
-    
+        }
     } 
 }

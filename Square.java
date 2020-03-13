@@ -33,12 +33,10 @@ public class Square
         }
 
     }
-    
     public JButton getButton()
     {
         return bt;
     }
-
 
     public void setSquaretoFrog()
     {
