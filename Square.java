@@ -38,13 +38,53 @@ public class Square
         return bt;
     }
 
+    public int getX(){
+        return x;
+    }
+
+    public int getY(){
+        return y;
+    }
+
+    public void setIcon(ImageIcon i){
+        bt.setIcon(i);
+
+
+    }
+
+    public String getName(){
+
+        return name;
+    }
+
+    public void moveFrog(Square s){
+
+        bt.setIcon(lily);
+
+
+        //to access the first square clicked use x or y 
+        //to access the second square clickued us s.x or s.y
+        
+
+        if(name.equals("green frog"))
+            s.setIcon(frog);
+        if(name.equals("red frog"))
+            s.setIcon(frogR);
+        
+        
+        name = "lily";
+
+    }
+
     public void setSquaretoFrog()
     {
+        name = "green frog";
         bt.setIcon(frog);
     }
 
     public void setSquaretoFrogR()
     {
+        name = "red frog";
         bt.setIcon(frogR);
     }
 
