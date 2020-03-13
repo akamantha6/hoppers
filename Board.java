@@ -62,9 +62,9 @@ public class Board implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         buttonsClicked += 1;
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 5; i++){
             for (int j = 0; j < 5; j++)
-                if (buttonsClicked == 1)
+                if (buttonsClicked == 1){
                     if (e.getSource().equals(squares[i][j].getButton()) && "green frog".equals(squares[i][j].getName())){
                         System.out.println( squares[i][j].getX() + " " + squares[i][j].getY() );
                         selectedSquare = squares[i][j];
@@ -83,22 +83,29 @@ public class Board implements ActionListener {
                         squares[i][j].setSquaretoFrogRY();
 
                     }
-if (buttonsClicked == 2)
-        for (int i = 0; i < 5; i++)
-            for (int j = 0; j < 5; j++)
+                }
+        }
+if (buttonsClicked == 2){
+        for (int i = 0; i < 5; i++){
+            for (int j = 0; j < 5; j++){
                 
-                    if (e.getSource().equals(squares[i][j].getButton()))
+                    if (e.getSource().equals(squares[i][j].getButton())) {
                         x2 = squares[i][j].getX();
                         y2 = squares[i][j].getY();
                         middleSquare = squares[(x1+x2) / 2][(y1 + y2) / 2];
+
+                        // if you get the middle sqaure and there is a frog that is a correct move
                         System.out.println("X1 =  " + x1 + "Y1 =" + y1 + "X2 = " + x2 + "Y2 = " + y2);
 
                         System.out.println("VALUE OF MIDDLE " + middleSquare.getName());
                       
-                      
+                    }
                       // if()
                        // only happen if frog is in the middle (greenf or redF)
                        // selectedSquare.moveFrog(squares[i][j]);
+            }
+        }
+}
 
         if (buttonsClicked == 2)
             buttonsClicked = 0;
